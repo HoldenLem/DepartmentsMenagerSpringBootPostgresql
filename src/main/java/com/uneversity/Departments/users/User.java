@@ -1,7 +1,11 @@
 package com.uneversity.Departments.users;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.*;
 import lombok.experimental.Accessors;
+
 
 @Getter
 @Setter
@@ -9,8 +13,11 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
-@EqualsAndHashCode(onlyExplicitlyIncluded = true, callSuper = false)
+
+@Entity
+@Table(name = "user_table")
 public class User {
+    @Id
     private String id;
     private String email;
     private String password;

@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16.6
+    environment:
+      POSTGRES_DB: university_manager
+      POSTGRES_USER: i_want_to_join
+      POSTGRES_PASSWORD: bots_crew
+    ports:
+      - "5432:5432"
+    volumes:
+      - /home/hanna/volumePs:/var/lib/postgresql/data
+
+volumes:
+  volumeUni:
