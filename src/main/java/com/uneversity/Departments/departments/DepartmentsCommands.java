@@ -1,7 +1,15 @@
 package com.uneversity.Departments.departments;
 
-import org.springframework.shell.standard.ShellComponent;
+import org.springframework.shell.command.annotation.Command;
 
-@ShellComponent
+
+@Command(group = "Customer Commands")
 public class DepartmentsCommands {
+
+    @Command(command="find-customer",
+            description="Finds a Customer By Id")
+    public String whoIsHeadOfDepartment() {
+
+        return "Head of department is ";
+    }
 }
