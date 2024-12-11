@@ -1,4 +1,3 @@
 ALTER TABLE departments
 ADD COLUMN IF NOT EXISTS head BIGSERIAL,
-ADD CONSTRAINT fk_head,
-FOREIGN KEY (head) REFERENCES lectors(id);
+ADD CONSTRAINT fk_head FOREIGN KEY (head) REFERENCES lectors(id);
