@@ -1,5 +1,6 @@
 package com.uneversity.Departments.departments;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -19,5 +20,6 @@ public class Department {
     @Id
     private long id;
     private String name;
+    @Column(name = "head")
     private long headOfDepartmentId;
 }

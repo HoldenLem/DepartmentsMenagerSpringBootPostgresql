@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
 @Accessors(chain = true)
 
 @Entity
-@Table(name = "user_table")
+@Table(name = "lectors")
 public class Lector {
     @Id
     private long id;
@@ -20,7 +20,6 @@ public class Lector {
     private String firstName;
     private String lastName;
     private double salary;
-    private long departmentId;
     @Enumerated(EnumType.STRING)
     private AcademicDegree academicDegree;
 
