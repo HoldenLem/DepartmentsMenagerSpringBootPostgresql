@@ -1,2 +1,15 @@
 1733322428275:Who is head of department
 1733322701185:find-customer
+1733998233796:who-is-head-of-department
+1733998240000:who-is-head-of-department name
+1733999642169:who-is-head-of-department Mathematics
+1733999946133:who-is-head-of-department mathematics
+1734000191839:who-is-head-of-department Mathematics
+1734000201506:who-is-head-of-department mathematics
+1734000427908:who-is-head-of-department Mathematics
+1734003773850:who-is-head-of-department mathematics
+1734003951400:@Query("SELECT d FROM Department d WHERE LOWER(d.name) = LOWER(:name)")
+1734003987792:Optional<Department> findByName(@Param("name") String name);who-is-head-of-department Mathematics
+1734004040396:who-is-head-of-department n
+1734004078269:who-is-head-of-department Mathematics
+1734004095924:who-is-head-of-department mathematics
