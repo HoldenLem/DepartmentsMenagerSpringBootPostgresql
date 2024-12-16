@@ -4,7 +4,6 @@ import com.uneversity.Departments.departments.DepartmentsCommands;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.shell.command.annotation.EnableCommand;
-import org.springframework.shell.standard.ShellCommandGroup;
 
 @SpringBootApplication
 @EnableCommand(DepartmentsCommands.class)

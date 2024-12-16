@@ -21,6 +21,6 @@ public class Lector {
     private String lastName;
     private double salary;
     @Enumerated(EnumType.STRING)
-    private AcademicDegree academicDegree;
+    private AcademicDegree degree;
 
 }

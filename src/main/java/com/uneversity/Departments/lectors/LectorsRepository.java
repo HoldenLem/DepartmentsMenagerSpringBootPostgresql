@@ -22,6 +22,6 @@ public interface LectorsRepository extends JpaRepository<Lector, String> {
                     """,
             nativeQuery = true
     )
-    HeadOfDepartment findBy(String departmentName, long lectorId);
+    HeadOfDepartment findBy(String departmentName);
 
 }

@@ -7,15 +7,11 @@ import org.springframework.stereotype.Component;
 
 @Component
 @RequiredArgsConstructor
-public class DepartmentFacade {
+class DepartmentFacade {
     private final DepartmentService service;
 
-    public HeadOfDepartment findBy(String name) {
-        var department = service.getDBy(name).orElseThrow(
-                () -> new
-                        IllegalArgumentException("Department not found")
-        );
-        return service.getHeadOfDepartment(name, department.getHeadOfDepartmentId());
+    HeadOfDepartment findBy(String name) {
+        return service.getHeadOfDepartment(name);
     }
 
 }

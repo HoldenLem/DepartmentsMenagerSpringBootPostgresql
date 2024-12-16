@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface DepartmentsRepository extends JpaRepository<Department, String> {
+interface DepartmentsRepository extends JpaRepository<Department, String> {
     @Query("SELECT d FROM Department d WHERE LOWER(d.name) = LOWER(:name)")
     Optional<Department> findBy(String name);
 }

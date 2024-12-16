@@ -7,7 +7,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class DepartmentDTO {
+class DepartmentDTO {
     private long id;
     private long facultyId;
     private long headOfDepartmentId;

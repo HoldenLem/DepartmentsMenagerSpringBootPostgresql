@@ -12,10 +12,11 @@ public class DepartmentsCommands {
 
     private final DepartmentFacade departmentFacade;
 
-    @Command(command = "who-is-head-of-department", description = "Finds the Head of a Department by Name")
-    public String findHeadBy(@Option(required = true, description = "The department name") final String departmentName) {
+    @Command(command = "departments head ", description = "Finds the Head of a Department by Name")
+    String findHeadBy(@Option(required = true, description = "The department name") final String departmentName) {
         final HeadOfDepartment head = departmentFacade.findBy(departmentName);
         return String.format("Head of %s department is %s %s", departmentName, head.getFirstName(), head.getLastName());
+
     }
 
 }

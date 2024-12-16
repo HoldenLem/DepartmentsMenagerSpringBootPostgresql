@@ -8,7 +8,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class LectorDTO {
+class LectorDTO {
     private long id;
     private String email;
     private String firstName;

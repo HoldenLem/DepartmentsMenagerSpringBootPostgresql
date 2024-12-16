@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Builder
 @AllArgsConstructor
-public class UserDTO {
+class UserDTO {
     private long id;
     private String firstName;
     private String lastName;

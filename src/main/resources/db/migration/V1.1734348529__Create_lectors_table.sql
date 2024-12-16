@@ -4,5 +4,5 @@ CREATE TABLE IF NOT EXISTS lectors (
     first_name Text,
     last_name Text,
     salary DOUBLE PRECISION,
-    department_id BIGSERIAL
+    degree TEXT
 );
