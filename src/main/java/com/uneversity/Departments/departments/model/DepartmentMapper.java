@@ -5,6 +5,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface DepartmentMapper {
-    DepartmentDTO of(Department department);
+   DepartmentDTO of(Department department);
     Department of(DepartmentDTO departmentDTO);
 }
