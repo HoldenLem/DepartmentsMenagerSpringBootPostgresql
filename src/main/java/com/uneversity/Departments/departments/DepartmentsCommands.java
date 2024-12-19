@@ -19,4 +19,11 @@ public class DepartmentsCommands {
 
     }
 
+    @Command(command = "departments statistics ", description = "Finds the statistics of a Department by Name")
+    String getBy(@Option(required = true,description = "The department name") final String departmentName) {
+        final var statistics = departmentFacade.getStatisticsBy(departmentName);
+        return String.format("Department %s, %d assistants, %d associate professors, %d professors",
+                departmentName, statistics.getAssistantsCount(), statistics.getAssociateProfessorsCount(), statistics.getProfessorsCount());
+    }
+
 }
