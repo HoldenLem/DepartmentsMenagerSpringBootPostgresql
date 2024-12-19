@@ -17,5 +17,6 @@ UPDATE lectors SET department_id = 1 WHERE id = 2;
 UPDATE lectors SET department_id = 2 WHERE id = 3;
 UPDATE lectors SET department_id = 3 WHERE id = 1;
 
-
+INSERT INTO lectors (id, email, first_name, last_name, salary, degree, department_id) VALUES
+(5, 'minerva.mcgonnagel@hogwarts.edu', 'Minerva', 'McGonagel', 9500, 'PROFESSOR', 1);
 
