@@ -43,4 +43,19 @@ public interface LectorsRepository extends JpaRepository<Lector, String> {
     )
     DepartmentStatistics getBy(String departmentName);
 
+    @Query(
+            value = """
+                    SELECT
+                    AVG(l.salary) as averageSalary
+                    FROM lectors l
+                    WHERE l.department_id =  (
+                         SELECT d.id
+                         FROM departments d
+                         WHERE LOWER(d.name) = LOWER(:departmentName)
+                     )
+                    """,
+            nativeQuery = true
+    )
+    int averageSalary(String departmentName);
+
 }

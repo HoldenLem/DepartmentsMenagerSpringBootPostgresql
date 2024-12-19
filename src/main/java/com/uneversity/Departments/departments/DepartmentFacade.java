@@ -19,4 +19,8 @@ class DepartmentFacade {
         return service.getBy(name);
     }
 
+    int getAverageSalary(String name) {
+        return service.averageSalary(name);
+    }
+
 }

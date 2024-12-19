@@ -26,4 +26,10 @@ public class DepartmentsCommands {
                 departmentName, statistics.getAssistantsCount(), statistics.getAssociateProfessorsCount(), statistics.getProfessorsCount());
     }
 
+    @Command(command = "departments averageSalary ", description = "Finds the average salary of a Department by Name")
+    String averageSalary(@Option(required = true, description = "The department name") final String departmentName) {
+        final var averageSalary = departmentFacade.getAverageSalary(departmentName);
+        return String.format("The average salary of %s department is %d", departmentName, averageSalary);
+    }
+
 }

@@ -20,4 +20,8 @@ class DepartmentService {
         return lectorsRepo.getBy(departmentName);
     }
 
+    int averageSalary(String departmentName) {
+        return lectorsRepo.averageSalary(departmentName);
+    }
+
 }
