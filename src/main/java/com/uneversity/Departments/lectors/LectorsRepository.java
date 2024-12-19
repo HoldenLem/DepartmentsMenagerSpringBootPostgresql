@@ -1,5 +1,6 @@
 package com.uneversity.Departments.lectors;
 
+import com.uneversity.Departments.departments.model.DepartmentStatistics;
 import com.uneversity.Departments.lectors.model.HeadOfDepartment;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -23,5 +24,23 @@ public interface LectorsRepository extends JpaRepository<Lector, String> {
             nativeQuery = true
     )
     HeadOfDepartment findBy(String departmentName);
+
+    @Query(
+            value = """
+                    SELECT
+                    COUNT(*) as lectorsCount,
+                    COUNT(CASE WHEN l.degree = 'ASSISTANT' THEN 1 END) as assistantsCount,
+                    COUNT(CASE WHEN l.degree = 'ASSOCIATE_PROFESSOR' THEN 1 END) as associateProfessorsCount,
+                    COUNT(CASE WHEN l.degree = 'PROFESSOR' THEN 1 END) as professorsCount
+                    FROM lectors l
+                    WHERE l.department_id =  (
+                         SELECT d.id
+                         FROM departments d
+                         WHERE LOWER(d.name) = LOWER(:departmentName)
+                     )
+                    """,
+            nativeQuery = true
+    )
+    DepartmentStatistics getBy(String departmentName);
 
 }

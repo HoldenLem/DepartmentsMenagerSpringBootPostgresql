@@ -22,5 +22,6 @@ public class Lector {
     private double salary;
     @Enumerated(EnumType.STRING)
     private AcademicDegree degree;
+    private long departmentId;
 
 }
