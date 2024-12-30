@@ -8,7 +8,7 @@ import lombok.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-class LectorDTO {
+public class LectorDTO {
     private long id;
     private String email;
     private String firstName;
@@ -16,4 +16,14 @@ class LectorDTO {
     private double salary;
     private long departmentId;
     private AcademicDegree academicDegree;
+
+
+    @Override
+    public String toString() {
+        return  firstName + " "  + lastName + '\'' +
+               " email='" + email + '\'' +
+               ", salary=" + salary +
+               ", departmentId=" + departmentId +
+               ", academicDegree=" + academicDegree ;
+    }
 }

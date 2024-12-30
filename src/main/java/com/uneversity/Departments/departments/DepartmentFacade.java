@@ -23,4 +23,8 @@ class DepartmentFacade {
         return service.averageSalary(name);
     }
 
+    int countEmployees(String name) {
+        return service.countEmployees(name);
+    }
+
 }

@@ -24,4 +24,10 @@ class DepartmentService {
         return lectorsRepo.averageSalary(departmentName);
     }
 
+    int countEmployees(String departmentName) {
+        return lectorsRepo.countBy(departmentName);
+    }
+
+
+
 }
