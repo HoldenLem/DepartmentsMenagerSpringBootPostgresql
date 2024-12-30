@@ -10,6 +10,7 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Accessors(chain = true)
+@ToString
 
 @Entity
 @Table(name = "lectors")

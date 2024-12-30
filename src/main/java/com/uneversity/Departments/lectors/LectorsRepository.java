@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface LectorsRepository extends JpaRepository<Lector, String> {
 
@@ -57,5 +59,31 @@ public interface LectorsRepository extends JpaRepository<Lector, String> {
             nativeQuery = true
     )
     int averageSalary(String departmentName);
+
+    @Query(
+            value = """
+                    SELECT
+                    COUNT(*) as lectorsCount
+                    FROM lectors l
+                    WHERE l.department_id =  (
+                         SELECT d.id
+                         FROM departments d
+                         WHERE LOWER(d.name) = LOWER(:departmentName)
+                     )
+                    """,
+            nativeQuery = true
+    )
+    int countBy(String departmentName);
+
+    @Query(
+            value = """
+                SELECT *
+                FROM lectors
+                WHERE LOWER(first_name) LIKE '%' || LOWER(:template) || '%'
+                OR LOWER(last_name) LIKE '%' || LOWER(:template) || '%';
+                """,
+            nativeQuery = true
+    )
+    List<Lector> searchBy(String template);
 
 }
