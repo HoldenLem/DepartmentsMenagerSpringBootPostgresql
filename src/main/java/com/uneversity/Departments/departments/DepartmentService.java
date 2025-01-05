@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 class DepartmentService {
     private final LectorsRepository lectorsRepo;
+    private final DepartmentsRepository departmentRepo;
 
     HeadOfDepartment getHeadOfDepartment(String departmentName) {
         return lectorsRepo.findBy(departmentName);
@@ -28,6 +29,7 @@ class DepartmentService {
         return lectorsRepo.countBy(departmentName);
     }
 
-
-
+    boolean presentBy(String departmentName) {
+        return !departmentRepo.existsByNameIgnoreCase(departmentName);
+    }
 }
