@@ -5,6 +5,6 @@ import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
 public interface LectorMapper {
-    LectorDTO of(Lector lector);
-    Lector of(LectorDTO lectorDTO);
+    LectorDTO toDto(Lector lector);
+    Lector toEntity(LectorDTO lectorDTO);
 }
