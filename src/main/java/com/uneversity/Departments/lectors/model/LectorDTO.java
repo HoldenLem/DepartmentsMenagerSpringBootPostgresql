@@ -1,6 +1,8 @@
 package com.uneversity.Departments.lectors.model;
 
 import com.uneversity.Departments.lectors.AcademicDegree;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import lombok.*;
 
 @Getter
@@ -14,8 +16,8 @@ public class LectorDTO {
     private String firstName;
     private String lastName;
     private double salary;
+    private AcademicDegree degree;
     private long departmentId;
-    private AcademicDegree academicDegree;
 
 
     @Override
@@ -24,6 +26,6 @@ public class LectorDTO {
                " email='" + email + '\'' +
                ", salary=" + salary +
                ", departmentId=" + departmentId +
-               ", academicDegree=" + academicDegree ;
+               ", academicDegree=" + degree ;
     }
 }
